@@ -1,0 +1,13 @@
+khia_canh,so_cau,precision,recall,f1,cach
+Chất lượng sản phẩm,54,0.755,0.741,0.748,Quy tắc từ khóa
+Giao hàng,24,0.719,0.958,0.821,Quy tắc từ khóa
+Đóng gói,43,0.911,0.953,0.932,Quy tắc từ khóa
+Giá,27,0.929,0.963,0.945,Quy tắc từ khóa
+Dịch vụ của shop,34,0.846,0.971,0.904,Quy tắc từ khóa
+Thuộc tính sản phẩm,47,0.712,0.787,0.747,Quy tắc từ khóa
+Chất lượng sản phẩm,54,0.8,0.667,0.727,Mô hình đa nhãn
+Giao hàng,24,0.733,0.917,0.815,Mô hình đa nhãn
+Đóng gói,43,0.952,0.93,0.941,Mô hình đa nhãn
+Giá,27,0.962,0.926,0.943,Mô hình đa nhãn
+Dịch vụ của shop,34,0.861,0.912,0.886,Mô hình đa nhãn
+Thuộc tính sản phẩm,47,0.76,0.809,0.784,Mô hình đa nhãn
