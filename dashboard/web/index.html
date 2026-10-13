@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phân tích và đánh giá sản phẩm đa khía cạnh</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav class="thanh-menu" aria-label="Menu chính">
+        <p class="ten-do-an" title="Phân tích và đánh giá sản phẩm đa khía cạnh dựa trên bình luận của khách hàng trên nền tảng thương mại điện tử">Phân tích và đánh giá sản phẩm đa khía cạnh dựa trên bình luận của khách hàng trên nền tảng thương mại điện tử</p>
+        <div class="ds-muc-menu">
+            <button type="button" class="muc-menu" data-trang="trang-phan-tich">Phân tích bình luận</button>
+            <button type="button" class="muc-menu" data-trang="trang-dashboard">Dashboard</button>
+        </div>
+    </nav>
+
+    <main id="trang-phan-tich" class="trang trang-phan-tich">
+        <h1 class="an-khoi-man-hinh">Phân tích bình luận</h1>
+
+        <div class="hai-cot">
+            <section class="khung" aria-labelledby="tieu-de-nhap">
+                <h2 id="tieu-de-nhap">Phân tích bình luận</h2>
+                <label for="o-binh-luan">Bình luận</label>
+                <textarea id="o-binh-luan" rows="6" maxlength="2000" placeholder="Ví dụ: Hàng đẹp, giao nhanh, shop nhiệt tình"></textarea>
+                <div class="hang-duoi-o-nhap">
+                    <span id="so-ky-tu">0 / 2000 ký tự</span>
+                    <span class="goi-y-phim">Ctrl + Enter để dự đoán</span>
+                </div>
+
+                <div class="hang-sao">
+                    <span id="nhan-chon-sao">Số sao (không bắt buộc)</span>
+                    <div class="chon-sao" id="chon-sao" role="group" aria-labelledby="nhan-chon-sao"></div>
+                    <span id="chu-so-sao" class="chu-so-sao">Chưa chọn</span>
+                </div>
+
+                <p class="nhan-ds-mau">Câu mẫu</p>
+                <div class="ds-mau" id="ds-mau"></div>
+
+                <div class="hang-nut">
+                    <button id="nut-du-doan" type="button">Dự đoán</button>
+                    <button id="nut-xoa" type="button" class="nut-phu">Xóa</button>
+                </div>
+                <p id="thong-bao-loi" class="loi" hidden></p>
+            </section>
+
+            <section class="khung" id="khung-ket-qua" aria-labelledby="tieu-de-ket-qua" aria-live="polite">
+                <h2 id="tieu-de-ket-qua">Kết quả</h2>
+                <p id="cho-ket-qua" class="cho-ket-qua">Kết quả sẽ hiện ở đây sau khi bạn bấm Dự đoán.</p>
+
+                <div id="noi-dung-ket-qua" hidden>
+                    <p id="nhan" class="nhan"></p>
+                    <p id="doi-chieu-sao" class="doi-chieu" hidden></p>
+
+                    <h3>Cảm xúc theo từng khía cạnh</h3>
+                    <p id="khong-co-khia-canh" class="ghi-chu" hidden>Bình luận này không nhắc rõ khía cạnh nào (chất lượng, giao hàng, đóng gói, giá, dịch vụ của shop, thuộc tính sản phẩm).</p>
+                    <table id="bang-khia-canh">
+                        <thead>
+                            <tr><th>Khía cạnh</th><th>Cảm xúc</th><th class="cot-so">Xác suất tích cực</th></tr>
+                        </thead>
+                        <tbody id="than-bang-khia-canh"></tbody>
+                    </table>
+
+                    <h3>Nội dung sau khi làm sạch</h3>
+                    <p id="noi-dung-sach" class="noi-dung-sach"></p>
+
+                    <h3>Các từ ảnh hưởng mạnh nhất</h3>
+                    <p id="khong-co-tu" class="ghi-chu" hidden>Mô hình không nhận ra từ nào trong câu này, nên kết quả không đáng tin.</p>
+                    <table id="bang-tu">
+                        <thead>
+                            <tr><th>Từ hoặc cụm từ</th><th>Kéo về phía</th><th class="cot-so">Đóng góp</th></tr>
+                        </thead>
+                        <tbody id="than-bang-tu"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <section class="khung" id="khung-lich-su" hidden>
+            <h2>Các câu đã thử</h2>
+            <table>
+                <thead>
+                    <tr><th>Bình luận</th><th class="cot-so">Số sao</th><th>Nhãn</th><th class="cot-so">Xác suất tích cực</th><th>So với số sao</th></tr>
+                </thead>
+                <tbody id="than-bang-lich-su"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <main id="trang-dashboard" class="trang trang-dashboard" hidden>
+        <h1 class="an-khoi-man-hinh">Dashboard</h1>
+        <p id="loi-dashboard" class="loi" hidden></p>
+        <div class="luoi-bieu-do" id="luoi-bieu-do"></div>
+    </main>
+
+    <dialog id="khung-phong-to" class="khung-phong-to" aria-label="Biểu đồ phóng to">
+        <img id="anh-phong-to" alt="">
+        <p id="chu-thich-phong-to"></p>
+        <button type="button" id="nut-dong-phong-to" class="nut-phu">Đóng</button>
+    </dialog>
+    <script src="/script.js"></script>
+</body>
+</html>
